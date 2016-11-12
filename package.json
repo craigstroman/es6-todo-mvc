@@ -1,0 +1,33 @@
+{
+  "name": "todomvc",
+  "version": "1.0.0",
+  "description": "The ToDo MVC app using new ES6 features.",
+  "main": "./src/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Craig Stroman",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-eslint": "^3.0.1",
+    "gulp-html-replace": "^1.6.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-webserver": "^0.9.1",
+    "require-dir": "^0.3.1",
+    "rollup-stream": "^1.14.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^6.4.0"
+  }
+}
