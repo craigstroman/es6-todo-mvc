@@ -1,15 +1,14 @@
 'use strict';
 
-var babelify = require('babelify');
-var browserify = require('browserify');
-var bufffer = require('vinyl-buffer');
-var gulp = require('gulp');
-var gutil  = require("gulp-util");
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
-var source = require('vinyl-source-stream');
+import babelify from 'babelify';
+import browserify from 'browserify';
+import bufffer from 'vinyl-buffer';
+import gulp from 'gulp';
+import errorHandler from '../error';
+import sourcemaps from 'gulp-sourcemaps';
+import source from 'vinyl-source-stream';
 
-gulp.task('babel', ['lint-js'], function() {
+gulp.task('babel', ['lint-js'], () => {
     return browserify({
         entries: ['./src/js/app.js'],
         debug: true
@@ -18,10 +17,7 @@ gulp.task('babel', ['lint-js'], function() {
         presets: ["es2015"]
     }))   
     .bundle()
-    .pipe(plumber(function(e) {
-        gutil.log(gutil.colors.red("Error (" + error.plugin + "): " + error.message));
-        this.emit("end");
-    }))    
+    .on('error', errorHandler(browserify))
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./src/js/'));
 });

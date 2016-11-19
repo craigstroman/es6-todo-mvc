@@ -1,15 +1,15 @@
 'use strict';
 
-var argv = require('yargs').argv;
-var gulp = require('gulp');
-var webserver = require('gulp-webserver');
+import argv from 'yargs';
+import gulp from 'gulp';
+import webserver from 'gulp-webserver';
 
-gulp.task('webserver', function() {
-    var src = (argv.production) ? './dist/' : './src/';
+gulp.task('webserver', () => {
+   let src = (argv.production) ? './dist/' : './src/';
 
     gulp.src(src)
-        .pipe(webserver({
-          livereload: true,
-          fallback: src + 'index.html'
-      }));
+         .pipe(webserver({
+           livereload: true,
+           fallback: src + 'index.html'
+         }));
 });

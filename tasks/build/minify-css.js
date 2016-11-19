@@ -1,10 +1,10 @@
 'use strict';
 
-var cleanCSS = require('gulp-clean-css');
-var gulp = require('gulp');
-var rename = require('gulp-rename');
+import cleanCSS  from 'gulp-clean-css';
+import gulp  from 'gulp';
+import rename  from 'gulp-rename';
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', () => {
     return gulp.src('./src/css/styles.css')
         .pipe(cleanCSS())
         .pipe(rename('styles.min.css'))

@@ -19,6 +19,9 @@ The TodoMVC app using vanilla ES6.  Refactored so that it's using SCSS for the C
 - End the server task if it's already running.
 - Start the server by typing gulp server --production.
 
+######Version 1.1.0
+- Converted JavaScript in Gulp files to ES6.
+
 ######Version 1.0.0
 - Created app.
 - Switched to using Gulp/Babel to transpile the JavaScript.
